@@ -1,4 +1,4 @@
-public class Truck extends Transport implements Competing {
+public class Truck<C extends DriverC> extends Transport implements Competing {
 
 
     public static final String PIT_STOP = "Пистстоп";
@@ -70,7 +70,7 @@ public class Truck extends Transport implements Competing {
 
     @Override
     public void race(String race) {
-        System.out.println("1 круг" + race);
+        System.out.println("1 круг " + race);
         switch (race) {
             case SPEED_1:
                 System.out.println("Скорость за первый круг");
@@ -95,7 +95,8 @@ public class Truck extends Transport implements Competing {
                 System.out.println("Время за 3 круг ");
                 System.out.println("Питстов совершен в 1:01");
                 break;
-
+            default:
+                System.out.println("ошибка");
         }
     }
 }

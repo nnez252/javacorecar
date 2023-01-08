@@ -1,4 +1,4 @@
-public class Bus extends Transport implements Competing {
+public class Bus<D extends DriverD> extends Transport  implements Competing {
     public static final String PIT_STOP = "Пистстоп";
     public static final String SPEED_1 = "170";
     public static final String SPEED_2 = "175";
@@ -93,7 +93,8 @@ public class Bus extends Transport implements Competing {
                 System.out.println("Время за 3 круг ");
                 System.out.println("Питстов совершен в 1:01");
                 break;
-
+            default:
+                System.out.println("ошибка");
         }
     }
 

@@ -1,4 +1,4 @@
-public class Passenger extends  Transport implements Competing{
+public class Passenger<B extends DriverB> extends  Transport implements Competing{
 
     public static final String PIT_STOP = "Пистстоп";
     public static final String SPEED_1 = "220";
@@ -89,7 +89,8 @@ public class Passenger extends  Transport implements Competing{
                 System.out.println("Время за 3 круг ");
                 System.out.println("Питстов совершен в 1:01");
                 break;
-
+            default:
+                System.out.println("ошибка");
         }
     }
 }

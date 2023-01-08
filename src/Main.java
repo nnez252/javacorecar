@@ -26,14 +26,9 @@ public class Main {
         Truck truck = new Truck("Merceds", "Spriner", 3.0f);
         truck.start();
         truck.stop();
+        truck.race("150");
+        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
+        alex.startGo();
 
-
-    }
-    public static void checkrace(Competing[] cars) {
-        for (Competing competing : cars) {
-            for (String race : cars.race) {
-
-            }
-        }
     }
 }
