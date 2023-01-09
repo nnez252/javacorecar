@@ -12,7 +12,7 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     private boolean turbine;
     private int wghite;
     private int numberOfGear;
-    public Bus(String brand, String model, int year, String contry, String color) {
+    public Bus(String brand, String model, int year, String contry, String color,int speed) {
         super(brand, model, year, contry, color);
     }
     public Bus(String brand, String model, float engineVolume) {

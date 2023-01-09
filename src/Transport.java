@@ -4,7 +4,7 @@ public class  Transport {
     private int year;
     private String contry;
     private String color;
-    private int Speed;
+    private int speed;
     private float engineVolume;
 
     public Transport(String brand, String model, float engineVolume) {
@@ -14,12 +14,12 @@ public class  Transport {
     }
 
     public  Transport(String brand, String model, int year, String contry, String color) {
-        if (brand == null || brand == "") {
+        if (brand == null || brand.isEmpty()) {
             this.brand = "deffualt";
         } else {
             this.brand = brand;
         }
-        if (model == null || model == "") {
+        if (model == null || model.isEmpty()) {
             this.model = "deffualt";
         } else {
             this.model = model;
@@ -31,17 +31,17 @@ public class  Transport {
         }
 
 
-        if (contry == null || contry == "") {
+        if (contry == null || contry.isEmpty()) {
             this.contry = "deffualt";
         } else {
             this.contry = contry;
         }
-        if (color == null || color == "") {
+        if (color == null || color.isEmpty()) {
             this.color = "deffualt";
         } else {
             this.color = color;
         }
-        this.Speed = Speed;
+        this.speed = speed;
     }
 
     public String getBrand() {
@@ -79,11 +79,11 @@ public class  Transport {
     }
 
     public int getSpeed() {
-        return Speed;
+        return speed;
     }
 
     public void setMaxSpeed(int maxSpeed) {
-        this.Speed = maxSpeed;
+        this.speed = maxSpeed;
     }
 
     public void start() {
@@ -104,7 +104,7 @@ public class  Transport {
                 ", year=" + year +
                 ", contry='" + contry + '\'' +
                 ", color='" + color + '\'' +
-                ", maxSpeed=" + Speed +
+                ", maxSpeed=" + speed +
                 '}';
     }
 

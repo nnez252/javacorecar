@@ -27,8 +27,8 @@ public class Main {
         truck.start();
         truck.stop();
         truck.race("150");
-        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
-        alex.startGo();
-
+//        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
+//        alex.startGo();
+        DriverB<Car>  alex = new Driver<Car>("Alex", true, 5);
     }
 }
