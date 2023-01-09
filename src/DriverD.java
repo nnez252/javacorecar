@@ -1,4 +1,4 @@
-public class DriverD<V extends Transport & Competing> extends Driver {
+public class DriverD extends Driver<Car> {
 
     public DriverD(String fio, boolean driverLicense, int experience) {
         super(fio, driverLicense, experience);
