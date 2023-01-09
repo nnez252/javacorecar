@@ -1,4 +1,4 @@
-public class Driver <T,L,V extends Transport & Competing>  {
+public class Driver <T extends Transport & Competing>  {
     private String fio;
     private boolean driverLicense;
     private int experience;
@@ -44,7 +44,7 @@ public class Driver <T,L,V extends Transport & Competing>  {
     public void refuel() {
         System.out.println("Заправиться");
     }
-    public void startGo(T transport) {
+    public void startGo() {
         System.out.println("Водитель B начинает движение автомобиля B");
     }
 

@@ -1,4 +1,4 @@
-public class Car extends Transport {
+public class Car extends Transport implements Competing {
     private float engineVolume;
     private String color;
     private String gear;
@@ -97,6 +97,26 @@ public class Car extends Transport {
 
     public void changeTires(Car car1) {
         summerTires = !summerTires;
+    }
+
+    @Override
+    public String pitStop() {
+        return null;
+    }
+
+    @Override
+    public String[] getBestTime() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] getMaxSpeed() {
+        return new String[0];
+    }
+
+    @Override
+    public void race(String race) {
+
     }
 
     public static class Key {
