@@ -1,3 +1,5 @@
+import java.time.Period;
+
 public class Main {
     public static void main(String[] args) {
 //        Car.Key key1 = new Car.Key(false, false);
@@ -20,15 +22,19 @@ public class Main {
 //        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White");
 //        System.out.println(bus3.toString());
 
-        Passenger passenger = new Passenger("Audi", "TT", 5.0f);
+        Passenger passenger = new Passenger("Audi", "TT", 5.0f, Passenger.bodyType.COUPE);
         passenger.start();
         passenger.stop();
-        Truck truck = new Truck("Merceds", "Spriner", 3.0f);
+        Truck truck = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.N11);
         truck.start();
         truck.stop();
         truck.race("150");
 //        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
         DriverB alex = new DriverB("Alex", true, 5);
         alex.startGo();
+        DriverC maks = new DriverC("Maks", true, 20);
+        maks.startGo();
+        passenger.printType();
+        truck.printType();
     }
 }

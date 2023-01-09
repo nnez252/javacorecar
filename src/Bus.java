@@ -1,4 +1,29 @@
 public class Bus<D extends DriverD> extends Transport  implements Competing {
+
+
+    public enum Capacity {
+        VERY_SMALL(10),
+        SMALL(25),
+        MEDIUM_LOW(40),
+        MEDIUM_MAX(50),
+        BIG_LOW(60),
+        BIG_MAX(80),
+        VERY_BIG_LOW(100),
+        VERY_BIG_MAX(120);
+        private int sieats;
+
+        Capacity(int sieats) {
+            this.sieats = sieats;
+        }
+
+        @Override
+        public String toString() {
+            return "Capacity{" +
+                    "sieats=" + sieats +
+                    '}';
+        }
+    }
+
     public static final String PIT_STOP = "Пистстоп";
     public static final String SPEED_1 = "170";
     public static final String SPEED_2 = "175";
@@ -12,11 +37,20 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     private boolean turbine;
     private int wghite;
     private int numberOfGear;
+    private Capacity type;
     public Bus(String brand, String model, int year, String contry, String color,int speed) {
         super(brand, model, year, contry, color);
     }
-    public Bus(String brand, String model, float engineVolume) {
-        super(brand, model, engineVolume);
+    public Bus(String brand, String model, float engineVolume, Capacity type) {
+        super(brand, model, engineVolume,type);
+    }
+
+    public Capacity getType() {
+        return type;
+    }
+
+    public void setType(Capacity type) {
+        this.type = type;
     }
 
     public String getGear() {
@@ -98,5 +132,9 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
         }
     }
 
-
+    @Override
+    public String printType() {
+        super.printType();
+        return null;
+    }
 }

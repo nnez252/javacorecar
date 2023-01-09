@@ -1,5 +1,6 @@
-public class  Transport {
+public class Transport {
     private String brand;
+
     private String model;
     private int year;
     private String contry;
@@ -7,13 +8,15 @@ public class  Transport {
     private int speed;
     private float engineVolume;
 
-    public Transport(String brand, String model, float engineVolume) {
+
+
+    public Transport(String brand, String model, float engineVolume, Passenger.bodyType type) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
     }
 
-    public  Transport(String brand, String model, int year, String contry, String color) {
+    public Transport(String brand, String model, int year, String contry, String color) {
         if (brand == null || brand.isEmpty()) {
             this.brand = "deffualt";
         } else {
@@ -24,7 +27,7 @@ public class  Transport {
         } else {
             this.model = model;
         }
-        if (year <= 1950 || year >=2023 ) {
+        if (year <= 1950 || year >= 2023) {
             this.year = 2000;
         } else {
             this.year = year;
@@ -42,6 +45,14 @@ public class  Transport {
             this.color = color;
         }
         this.speed = speed;
+    }
+
+    public Transport(String brand, String model, float engineVolume, Bus.Capacity type) {
+
+    }
+
+    public Transport(String brand, String model, float engineVolume, Truck.loadTonnage type) {
+
     }
 
     public String getBrand() {
@@ -69,7 +80,6 @@ public class  Transport {
     }
 
 
-
     public String getColor() {
         return color;
     }
@@ -94,6 +104,10 @@ public class  Transport {
         System.out.println("Закончить двежение");
     }
 
+    public String printType() {
+
+        return null;
+    }
 
 
     @Override

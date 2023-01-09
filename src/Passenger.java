@@ -1,5 +1,28 @@
 public class Passenger<B extends DriverB> extends  Transport implements Competing{
 
+    public enum bodyType {
+        SEDAN("Седан"),
+        HETСHBACK("Хечбэк"),
+        COUPE("Купе"),
+        UNIVERSAL("универсал"),
+        SUV("Внедорожник"),
+        CROSSOVER("Кроссовер"),
+        PICKUP("Пикап"),
+        VAN("Фургон"),
+        MINIVAN("Минивэн");
+        private String name;
+
+        bodyType(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "Тип кузова " +
+                    name + '\'';
+        }
+    }
+
     public static final String PIT_STOP = "Пистстоп";
     public static final String SPEED_1 = "220";
     public static final String SPEED_2 = "225";
@@ -13,8 +36,17 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     private boolean turbine;
     private int wghite;
     private int numberOfGear;
-    public Passenger(String brand, String model, float engineVolume) {
-        super(brand, model, engineVolume);
+    private bodyType type;
+    public Passenger(String brand, String model, float engineVolume, bodyType type) {
+        super(brand, model, engineVolume,type);
+    }
+
+    public bodyType getType() {
+        return type;
+    }
+
+    public void setType(bodyType type) {
+        this.type = type;
     }
 
     public String getGear() {
@@ -93,4 +125,9 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
                 System.out.println("ошибка");
         }
     }
+    @Override
+    public String printType() {
+        return getType().name;
+    }
 }
+

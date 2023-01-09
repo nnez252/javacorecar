@@ -1,5 +1,25 @@
 public class Truck<C extends DriverC> extends Transport implements Competing {
 
+    public enum loadTonnage {
+        N1(3.5f),
+        N11(3.5f),
+        N2(3.5f),
+        N22(12f),
+        N3(12f),
+       N33(12f);
+        private float tonnage;
+
+        loadTonnage(float tonnage) {
+            this.tonnage = tonnage;
+        }
+
+        @Override
+        public String toString() {
+            return "loadCapacity{" +
+                    "capacity=" + tonnage +
+                    '}';
+        }
+    }
 
     public static final String PIT_STOP = "Пистстоп";
     public static final String SPEED_1 = "150";
@@ -14,10 +34,19 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     private boolean turbine;
     private int wghite;
     private int numberOfGear;
+    private loadTonnage type;
 
 
-    public Truck(String brand, String model, float engineVolume) {
-        super(brand, model, engineVolume);
+    public Truck(String brand, String model, float engineVolume,loadTonnage type) {
+        super(brand, model, engineVolume, type);
+    }
+
+    public loadTonnage getType() {
+        return type;
+    }
+
+    public void setType(loadTonnage type) {
+        this.type = type;
     }
 
     public String getGear() {
@@ -99,4 +128,10 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
                 System.out.println("ошибка");
         }
     }
+    @Override
+    public String printType() {
+        super.printType();
+        return null;
+    }
+
 }
