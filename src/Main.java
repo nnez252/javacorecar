@@ -20,10 +20,10 @@ public class Main {
 //        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White");
 //        System.out.println(bus3.toString());
 
-        Passenger passenger = new Passenger("Audi", "TT", 5.0f);
+        Passenger passenger = new Passenger("Audi", "TT", 5.0f, Passenger.bodyType.MINIVAN);
         passenger.start();
         passenger.stop();
-        Truck truck = new Truck("Merceds", "Spriner", 3.0f);
+        Truck truck = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.N11);
         truck.start();
         truck.stop();
         truck.race("150");
