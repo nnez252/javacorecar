@@ -30,5 +30,6 @@ public class Main {
 //        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
         DriverB alex = new DriverB("Alex", true, 5);
         alex.startGo();
+        passenger.printType();
     }
 }

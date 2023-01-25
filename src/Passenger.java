@@ -127,7 +127,13 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     }
     @Override
     public String printType() {
-        return getType().name;
+        super.printType();
+        if (getType() == null) {
+            System.out.println("Кузов не известен");
+        } else {
+            System.out.println(getType());
+        }
+        return String.valueOf(getType());
     }
 }
 
