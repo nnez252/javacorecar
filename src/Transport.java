@@ -10,7 +10,7 @@ public class Transport {
 
 
 
-    public Transport(String brand, String model, float engineVolume, Passenger.bodyType type) {
+    public Transport(String brand, String model, float engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
@@ -47,13 +47,7 @@ public class Transport {
         this.speed = speed;
     }
 
-    public Transport(String brand, String model, float engineVolume, Bus.Capacity type) {
 
-    }
-
-    public Transport(String brand, String model, float engineVolume, Truck.loadTonnage type) {
-
-    }
 
     public String getBrand() {
         return brand;

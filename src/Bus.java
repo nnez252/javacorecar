@@ -42,7 +42,8 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
         super(brand, model, year, contry, color);
     }
     public Bus(String brand, String model, float engineVolume, Capacity type) {
-        super(brand, model, engineVolume,type);
+        super(brand, model, engineVolume);
+        this.type = type;
     }
 
     public Capacity getType() {
@@ -131,10 +132,13 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
                 System.out.println("ошибка");
         }
     }
-
-    @Override
     public String printType() {
         super.printType();
-        return null;
+        if (getType() == null) {
+            System.out.println("Кузов не известен");
+        } else {
+            System.out.println(getType());
+        }
+        return String.valueOf(getType());
     }
 }

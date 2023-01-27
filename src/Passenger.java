@@ -1,6 +1,6 @@
 public class Passenger<B extends DriverB> extends  Transport implements Competing{
 
-    public enum bodyType {
+    public enum BodyType {
         SEDAN("Седан"),
         HETСHBACK("Хечбэк"),
         COUPE("Купе"),
@@ -12,7 +12,7 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
         MINIVAN("Минивэн");
         private String name;
 
-        bodyType(String name) {
+        BodyType(String name) {
             this.name = name;
         }
 
@@ -36,16 +36,17 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     private boolean turbine;
     private int wghite;
     private int numberOfGear;
-    private bodyType type;
-    public Passenger(String brand, String model, float engineVolume, bodyType type) {
-        super(brand, model, engineVolume,type);
+    private BodyType type;
+    public Passenger(String brand, String model, float engineVolume, BodyType type) {
+        super(brand, model, engineVolume);
+        this.type = type;
     }
 
-    public bodyType getType() {
+    public BodyType getType() {
         return type;
     }
 
-    public void setType(bodyType type) {
+    public void setType(BodyType type) {
         this.type = type;
     }
 

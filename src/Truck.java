@@ -37,8 +37,9 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     private loadTonnage type;
 
 
-    public Truck(String brand, String model, float engineVolume,loadTonnage type) {
-        super(brand, model, engineVolume, type);
+    public Truck(String brand, String model, float engineVolume, loadTonnage type ) {
+        super(brand, model, engineVolume);
+        this.type = type;
     }
 
     public loadTonnage getType() {
@@ -128,10 +129,14 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
                 System.out.println("ошибка");
         }
     }
-    @Override
     public String printType() {
         super.printType();
-        return null;
+        if (getType() == null) {
+            System.out.println("Кузов не известен");
+        } else {
+            System.out.println(getType());
+        }
+        return String.valueOf(getType());
     }
 
 }
