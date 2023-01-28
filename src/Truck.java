@@ -1,12 +1,10 @@
 public class Truck<C extends DriverC> extends Transport implements Competing {
 
     public enum loadTonnage {
-        N1(3.5f),
-        N11(3.5f),
-        N2(3.5f),
-        N22(12f),
-        N3(12f),
-       N33(12f);
+        TONNAGE_MAX1(3.5f),
+        TONNAGE_MIN2(3.5f),
+        TONNAGE_MAX2(12f),
+        TONNAGE_MAX3(12f);
         private float tonnage;
 
         loadTonnage(float tonnage) {
@@ -15,9 +13,9 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
 
         @Override
         public String toString() {
-            return "loadCapacity{" +
-                    "capacity=" + tonnage +
-                    '}';
+            return "Грузоподьемность " +
+                     tonnage +
+                    'т';
         }
     }
 

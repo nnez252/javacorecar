@@ -23,7 +23,7 @@ public class Main {
         Passenger passenger = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN);
         passenger.start();
         passenger.stop();
-        Truck truck = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.N3);
+        Truck truck = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2);
         truck.start();
         truck.stop();
         truck.race("150");
