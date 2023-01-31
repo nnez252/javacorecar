@@ -20,6 +20,7 @@ public class Main {
 //        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White");
 //        System.out.println(bus3.toString());
 
+        Bus bus = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL);
         Passenger passenger = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN);
         passenger.start();
         passenger.stop();
@@ -32,5 +33,23 @@ public class Main {
         alex.startGo();
         passenger.printType();
         truck.printType();
+        passDiagnostics(truck,passenger,bus);
+
+
     }
+
+    public static void passDiagnostics(Transport...transports) {
+        for (Transport transport : transports) {
+            try {
+                transport.passDiagnostics();
+            } catch (CantDiagnostocsException e) {
+                System.out.println("Произошла ошибка");
+                System.out.println(e.getMessage());
+            }
+        }
+
+    }
+
+
+
 }

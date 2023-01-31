@@ -41,7 +41,7 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     public Bus(String brand, String model, int year, String contry, String color,int speed) {
         super(brand, model, year, contry, color);
     }
-    public Bus(String brand, String model, float engineVolume, Capacity type) {
+    public Bus(String brand, String model, float engineVolume, Bus.Capacity type) {
         super(brand, model, engineVolume);
         this.type = type;
     }
@@ -140,5 +140,10 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
             System.out.println(getType());
         }
         return String.valueOf(getType());
+    }
+
+    @Override
+    public void passDiagnostics() throws CantDiagnostocsException{
+        throw new CantDiagnosticsException("Автобус не может проходить диагностику");
     }
 }

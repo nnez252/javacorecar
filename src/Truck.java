@@ -137,4 +137,8 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
         return String.valueOf(getType());
     }
 
+    @Override
+    public void passDiagnostics() throws CantDiagnostocsException {
+        super.passDiagnostics();
+    }
 }

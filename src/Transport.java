@@ -116,4 +116,8 @@ public class Transport {
                 '}';
     }
 
+    public void passDiagnostics() throws CantDiagnostocsException {
+        System.out.println(getBrand()+"Проходит диагностику");
+    }
+
 }

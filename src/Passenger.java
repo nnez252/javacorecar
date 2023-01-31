@@ -136,5 +136,10 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
         }
         return String.valueOf(getType());
     }
+
+    @Override
+    public void passDiagnostics() throws CantDiagnostocsException {
+        super.passDiagnostics();
+    }
 }
 
