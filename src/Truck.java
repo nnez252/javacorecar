@@ -33,11 +33,12 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     private int wghite;
     private int numberOfGear;
     private loadTonnage type;
+    private Mechanic mechanic;
 
-
-    public Truck(String brand, String model, float engineVolume, loadTonnage type ) {
+    public Truck(String brand, String model, float engineVolume, loadTonnage type, Mechanic mechanic ) {
         super(brand, model, engineVolume);
         this.type = type;
+        this.mechanic = mechanic;
     }
 
     public loadTonnage getType() {

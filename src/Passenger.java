@@ -37,9 +37,11 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     private int wghite;
     private int numberOfGear;
     private BodyType type;
-    public Passenger(String brand, String model, float engineVolume, BodyType type) {
+    private Mechanic mechanic;
+    public Passenger(String brand, String model, float engineVolume, BodyType type,Mechanic mechanic) {
         super(brand, model, engineVolume);
         this.type = type;
+        this.mechanic = mechanic;
     }
 
     public BodyType getType() {

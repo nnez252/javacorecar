@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 //        Car.Key key1 = new Car.Key(false, false);
@@ -17,23 +20,33 @@ public class Main {
 //        System.out.println(bus1.toString());
 //        Bus bus2 = new Bus("WV", "polo", 2007, "Germany", "red");
 //        System.out.println(bus2.toString());
-//        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White");
+//        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White",150);
 //        System.out.println(bus3.toString());
+        Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
+        Mechanic mechanic2 = new Mechanic("Макс", "BMW", "бусс");
+        Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari", "легковой, трак");
 
-        Bus bus = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL);
-        Passenger passenger = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN);
-        passenger.start();
-        passenger.stop();
-        Truck truck = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2);
-        truck.start();
-        truck.stop();
-        truck.race("150");
+
+        List<Transport> transport = new ArrayList<>();
+        Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL ,mechanic2);
+        Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
+        Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2, mechanic3);
+        transport.add(bus1);
+        transport.add(passenger1);
+        transport.add(truck1);
+
+
+        passenger1.start();
+        passenger1.stop();
+        truck1.start();
+        truck1.stop();
+        truck1.race("150");
 //        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
         DriverB alex = new DriverB("Alex", true, 5);
         alex.startGo();
-        passenger.printType();
-        truck.printType();
-        passDiagnostics(truck,passenger,bus);
+        passenger1.printType();
+        truck1.printType();
+        passDiagnostics(truck1,passenger1,bus1);
 
 
     }

@@ -38,12 +38,14 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     private int wghite;
     private int numberOfGear;
     private Capacity type;
+    private Mechanic mechanic;
     public Bus(String brand, String model, int year, String contry, String color,int speed) {
         super(brand, model, year, contry, color);
     }
-    public Bus(String brand, String model, float engineVolume, Bus.Capacity type) {
+    public Bus(String brand, String model, float engineVolume, Bus.Capacity type,Mechanic mechanic) {
         super(brand, model, engineVolume);
         this.type = type;
+        this.mechanic = mechanic;
     }
 
     public Capacity getType() {
