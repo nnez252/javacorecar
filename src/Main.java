@@ -22,9 +22,13 @@ public class Main {
 //        System.out.println(bus2.toString());
 //        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White",150);
 //        System.out.println(bus3.toString());
+        List<Mechanic> mechanics = new ArrayList<>();
         Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
         Mechanic mechanic2 = new Mechanic("Макс", "BMW", "бусс");
         Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari", "легковой, трак");
+        mechanics.add(mechanic1);
+        mechanics.add(mechanic2);
+        mechanics.add(mechanic3);
 
 
         List<Transport> transport = new ArrayList<>();
