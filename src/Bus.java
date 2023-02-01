@@ -145,7 +145,7 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     }
 
     @Override
-    public void passDiagnostics() throws CantDiagnostocsException{
+    public void passDiagnostics() throws CantDiagnosticsException{
         throw new CantDiagnosticsException("Автобус не может проходить диагностику");
     }
 }

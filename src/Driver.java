@@ -48,5 +48,11 @@ public class Driver <T extends Transport & Competing>  {
         System.out.println("Водитель B начинает движение автомобиля B");
     }
 
-
+    public void haveDriverlicense() throws HeventDriverLicense {
+        if (driverLicense == true) {
+            System.out.println("У водителя есть права, все хорошо");
+        } else {
+            throw new HeventDriverLicense("Нет водительских прав");
+        }
+    }
 }

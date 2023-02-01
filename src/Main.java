@@ -43,10 +43,12 @@ public class Main {
         truck1.race("150");
 //        DriverB<Passenger> alex = new DriverB<Passenger>("Alex", true, 2);
         DriverB alex = new DriverB("Alex", true, 5);
+        DriverB crstian = new DriverB("Crstian", false, 3);
         alex.startGo();
         passenger1.printType();
         truck1.printType();
         passDiagnostics(truck1,passenger1,bus1);
+        haveDriverLicense(alex,crstian);
 
 
     }
@@ -55,7 +57,7 @@ public class Main {
         for (Transport transport : transports) {
             try {
                 transport.passDiagnostics();
-            } catch (CantDiagnostocsException e) {
+            } catch (CantDiagnosticsException e) {
                 System.out.println("Произошла ошибка");
                 System.out.println(e.getMessage());
             }
@@ -63,6 +65,16 @@ public class Main {
 
     }
 
+    public static void haveDriverLicense(Driver...drivers) {
+        for (Driver driver : drivers) {
+            try {
+                driver.haveDriverlicense();
+            } catch (HeventDriverLicense e) {
+                System.out.println("Произошла ошибка");
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
 
 }

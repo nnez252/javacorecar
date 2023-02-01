@@ -139,7 +139,7 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     }
 
     @Override
-    public void passDiagnostics() throws CantDiagnostocsException {
+    public void passDiagnostics() throws CantDiagnosticsException {
         super.passDiagnostics();
     }
 }

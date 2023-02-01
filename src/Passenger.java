@@ -140,7 +140,7 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     }
 
     @Override
-    public void passDiagnostics() throws CantDiagnostocsException {
+    public void passDiagnostics() throws CantDiagnosticsException {
         super.passDiagnostics();
     }
 }
