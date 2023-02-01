@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,19 +21,21 @@ public class Main {
 //        System.out.println(bus2.toString());
 //        Bus bus3 = new Bus("Mercedes", "Sprinter", 2009, "Germany", "White",150);
 //        System.out.println(bus3.toString());
-        List<Mechanic> mechanics = new ArrayList<>();
+
+
+         Map<Transport,Mechanic> mechanics = new HashMap<>();
         Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
+        Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
         Mechanic mechanic2 = new Mechanic("Макс", "BMW", "бусс");
+        Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL ,mechanic2);
         Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari", "легковой, трак");
-        mechanics.add(mechanic1);
-        mechanics.add(mechanic2);
-        mechanics.add(mechanic3);
+        Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2, mechanic3);
+        mechanics.put(truck1,mechanic1);
+        mechanics.put(passenger1,mechanic3);
+        mechanics.put(bus1,mechanic2);
 
 
         List<Transport> transport = new ArrayList<>();
-        Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL ,mechanic2);
-        Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
-        Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2, mechanic3);
         transport.add(bus1);
         transport.add(passenger1);
         transport.add(truck1);
@@ -53,7 +54,7 @@ public class Main {
         truck1.printType();
         passDiagnostics(truck1,passenger1,bus1);
         haveDriverLicense(alex,crstian);
-
+        System.out.println(mechanics);
 
     }
 
