@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Passenger<B extends DriverB> extends  Transport implements Competing{
 
     public enum BodyType {
@@ -142,6 +144,20 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     @Override
     public void passDiagnostics() throws CantDiagnosticsException {
         super.passDiagnostics();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Passenger<?> passenger = (Passenger<?>) o;
+        return turbine == passenger.turbine && wghite == passenger.wghite && numberOfGear == passenger.numberOfGear && Objects.equals(gear, passenger.gear) && type == passenger.type && Objects.equals(mechanic, passenger.mechanic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
     }
 }
 

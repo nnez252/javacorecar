@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Transport {
     private String brand;
 
@@ -120,4 +122,16 @@ public class Transport {
         System.out.println(getBrand()+"Проходит диагностику");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return year == transport.year && speed == transport.speed && Float.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(contry, transport.contry) && Objects.equals(color, transport.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, year, contry, color, speed, engineVolume);
+    }
 }

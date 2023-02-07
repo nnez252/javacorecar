@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Bus<D extends DriverD> extends Transport  implements Competing {
 
 
@@ -147,5 +149,19 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     @Override
     public void passDiagnostics() throws CantDiagnosticsException{
         throw new CantDiagnosticsException("Автобус не может проходить диагностику");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Bus<?> bus = (Bus<?>) o;
+        return turbine == bus.turbine && wghite == bus.wghite && numberOfGear == bus.numberOfGear && gear.equals(bus.gear) && type == bus.type && mechanic.equals(bus.mechanic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
     }
 }

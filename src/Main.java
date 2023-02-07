@@ -33,6 +33,7 @@ public class Main {
         mechanics.put(truck1,mechanic1);
         mechanics.put(passenger1,mechanic3);
         mechanics.put(bus1,mechanic2);
+        System.out.println(mechanic3);
 
 
         List<Transport> transport = new ArrayList<>();

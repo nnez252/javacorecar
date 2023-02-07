@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Car extends Transport implements Competing {
     private float engineVolume;
     private String color;
@@ -140,4 +142,17 @@ public class Car extends Transport implements Competing {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Car car = (Car) o;
+        return Float.compare(car.engineVolume, engineVolume) == 0 && placeSeat == car.placeSeat && summerTires == car.summerTires && Objects.equals(color, car.color) && Objects.equals(gear, car.gear) && Objects.equals(bodyType, car.bodyType) && Objects.equals(regNumber, car.regNumber) && Objects.equals(key, car.key);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), engineVolume, color, gear, bodyType, regNumber, placeSeat, summerTires, key);
+    }
 }

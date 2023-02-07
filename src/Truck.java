@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Truck<C extends DriverC> extends Transport implements Competing {
 
     public enum loadTonnage {
@@ -141,5 +143,19 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     @Override
     public void passDiagnostics() throws CantDiagnosticsException {
         super.passDiagnostics();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Truck<?> truck = (Truck<?>) o;
+        return turbine == truck.turbine && wghite == truck.wghite && numberOfGear == truck.numberOfGear && Objects.equals(gear, truck.gear) && type == truck.type && Objects.equals(mechanic, truck.mechanic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
     }
 }
