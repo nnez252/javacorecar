@@ -23,16 +23,17 @@ public class Main {
 //        System.out.println(bus3.toString());
 
 
-         Map<Transport,Mechanic> mechanics = new HashMap<>();
+        Set<Mechanic> mechanics = new HashSet<>();
+//         Map<Transport,Mechanic> mechanics = new HashMap<>();
         Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
         Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
         Mechanic mechanic2 = new Mechanic("Макс", "BMW", "бусс");
         Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL ,mechanic2);
         Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari", "легковой, трак");
         Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2, mechanic3);
-        mechanics.put(truck1,mechanic1);
-        mechanics.put(passenger1,mechanic3);
-        mechanics.put(bus1,mechanic2);
+        mechanics.add(mechanic1);
+        mechanics.add(mechanic3);
+        mechanics.add(mechanic2);
         System.out.println(mechanic3);
 
 
