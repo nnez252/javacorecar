@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Transport {
@@ -9,6 +10,7 @@ public class Transport {
     private String color;
     private int speed;
     private float engineVolume;
+    private String mechanic;
 
 
 
@@ -100,6 +102,10 @@ public class Transport {
         System.out.println("Закончить двежение");
     }
 
+    public String getMechanic() { return mechanic; }
+
+    public void setMechanic(String mechanic) { this.mechanic = mechanic; }
+
     public String printType() {
 
         return null;
@@ -134,4 +140,5 @@ public class Transport {
     public int hashCode() {
         return Objects.hash(brand, model, year, contry, color, speed, engineVolume);
     }
+
 }

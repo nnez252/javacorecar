@@ -39,11 +39,11 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
     private int wghite;
     private int numberOfGear;
     private BodyType type;
-    private Mechanic mechanic;
-    public Passenger(String brand, String model, float engineVolume, BodyType type,Mechanic mechanic) {
+
+    public Passenger(String brand, String model, float engineVolume, BodyType type) {
         super(brand, model, engineVolume);
         this.type = type;
-        this.mechanic = mechanic;
+
     }
 
     public BodyType getType() {
@@ -157,7 +157,7 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type);
     }
 }
 

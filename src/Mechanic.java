@@ -1,9 +1,9 @@
 public class Mechanic {
     private String name;
     private String company;
-    private String car;
+    private Transport car;
 
-    public Mechanic(String name, String company, String car) {
+    public Mechanic(String name, String company, Transport car) {
         this.name = name;
         this.company = company;
         this.car = car;
@@ -26,11 +26,11 @@ public class Mechanic {
         this.company = company;
     }
 
-    public String getCar() {
+    public Transport getCar() {
         return car;
     }
 
-    public void setCar(String car) {
+    public void setCar(Transport car) {
         this.car = car;
     }
 

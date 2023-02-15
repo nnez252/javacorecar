@@ -35,12 +35,12 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
     private int wghite;
     private int numberOfGear;
     private loadTonnage type;
-    private Mechanic mechanic;
 
-    public Truck(String brand, String model, float engineVolume, loadTonnage type, Mechanic mechanic ) {
+
+    public Truck(String brand, String model, float engineVolume, loadTonnage type) {
         super(brand, model, engineVolume);
         this.type = type;
-        this.mechanic = mechanic;
+
     }
 
     public loadTonnage getType() {
@@ -151,11 +151,11 @@ public class Truck<C extends DriverC> extends Transport implements Competing {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Truck<?> truck = (Truck<?>) o;
-        return turbine == truck.turbine && wghite == truck.wghite && numberOfGear == truck.numberOfGear && Objects.equals(gear, truck.gear) && type == truck.type && Objects.equals(mechanic, truck.mechanic);
+        return turbine == truck.turbine && wghite == truck.wghite && numberOfGear == truck.numberOfGear && Objects.equals(gear, truck.gear) && type == truck.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type);
     }
 }

@@ -40,14 +40,14 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
     private int wghite;
     private int numberOfGear;
     private Capacity type;
-    private Mechanic mechanic;
+
     public Bus(String brand, String model, int year, String contry, String color,int speed) {
         super(brand, model, year, contry, color);
     }
-    public Bus(String brand, String model, float engineVolume, Bus.Capacity type,Mechanic mechanic) {
+    public Bus(String brand, String model, float engineVolume, Bus.Capacity type) {
         super(brand, model, engineVolume);
         this.type = type;
-        this.mechanic = mechanic;
+
     }
 
     public Capacity getType() {
@@ -151,17 +151,18 @@ public class Bus<D extends DriverD> extends Transport  implements Competing {
         throw new CantDiagnosticsException("Автобус не может проходить диагностику");
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Bus<?> bus = (Bus<?>) o;
-        return turbine == bus.turbine && wghite == bus.wghite && numberOfGear == bus.numberOfGear && gear.equals(bus.gear) && type == bus.type && mechanic.equals(bus.mechanic);
+        return turbine == bus.turbine && wghite == bus.wghite && numberOfGear == bus.numberOfGear && Objects.equals(gear, bus.gear) && type == bus.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type, mechanic);
+        return Objects.hash(super.hashCode(), gear, turbine, wghite, numberOfGear, type);
     }
 }

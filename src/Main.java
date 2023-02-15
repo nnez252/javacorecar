@@ -26,12 +26,12 @@ public class Main {
         Set<Mechanic> mechanics = new HashSet<>();
         Iterator<Mechanic> iterator = mechanics.iterator();
 //         Map<Transport,Mechanic> mechanics = new HashMap<>();
-        Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
-        Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
-        Mechanic mechanic2 = new Mechanic("Макс", "BMW", "бусс");
-        Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL ,mechanic2);
-        Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari", "легковой, трак");
-        Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2, mechanic3);
+        Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN );
+        Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL );
+        Truck truck1 = new Truck("Merceds", "Spriner", 3.0f, Truck.loadTonnage.TONNAGE_MIN2 );
+        Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari",bus1 );
+        Mechanic mechanic1 = new Mechanic("Егор", "Mercdes",passenger1 );
+        Mechanic mechanic2 = new Mechanic("Макс", "BMW",truck1 );
         mechanics.add(mechanic1);
         mechanics.add(mechanic3);
         mechanics.add(mechanic2);
