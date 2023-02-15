@@ -24,6 +24,7 @@ public class Main {
 
 
         Set<Mechanic> mechanics = new HashSet<>();
+        Iterator<Mechanic> iterator = mechanics.iterator();
 //         Map<Transport,Mechanic> mechanics = new HashMap<>();
         Mechanic mechanic1 = new Mechanic("Егор", "Mercdes", "легковой, трак");
         Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN, mechanic1);
@@ -35,6 +36,7 @@ public class Main {
         mechanics.add(mechanic3);
         mechanics.add(mechanic2);
         System.out.println(mechanic3);
+        System.out.println(iterator);
 
 
         List<Transport> transport = new ArrayList<>();
