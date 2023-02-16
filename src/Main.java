@@ -23,8 +23,7 @@ public class Main {
 //        System.out.println(bus3.toString());
 
 
-        Set<Mechanic> mechanics = new HashSet<>();
-        Iterator<Mechanic> iterator = mechanics.iterator();
+        Set<Mechanic> mechanic = new HashSet<>();
 //         Map<Transport,Mechanic> mechanics = new HashMap<>();
         Passenger passenger1 = new Passenger("Audi", "TT", 5.0f, Passenger.BodyType.MINIVAN );
         Bus bus1 = new Bus("Mercedes", "Sprinter", 3.0f,Bus.Capacity.SMALL );
@@ -32,11 +31,19 @@ public class Main {
         Mechanic mechanic3 = new Mechanic("Владимир", "Ferrari",bus1 );
         Mechanic mechanic1 = new Mechanic("Егор", "Mercdes",passenger1 );
         Mechanic mechanic2 = new Mechanic("Макс", "BMW",truck1 );
-        mechanics.add(mechanic1);
-        mechanics.add(mechanic3);
-        mechanics.add(mechanic2);
+        mechanic.add(mechanic1);
+        mechanic.add(mechanic3);
+        mechanic.add(mechanic2);
         System.out.println(mechanic3);
-        System.out.println(iterator);
+        bus1.addMechanic(mechanic3);
+        passenger1.addMechanic(mechanic1);
+        truck1.addMechanic(mechanic2);
+        truck1.getMechanics();
+        Iterator<Mechanic> iter = mechanic.iterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.hasNext());
+        }
+
 
 
         List<Transport> transport = new ArrayList<>();
@@ -58,7 +65,7 @@ public class Main {
         truck1.printType();
         passDiagnostics(truck1,passenger1,bus1);
         haveDriverLicense(alex,crstian);
-        System.out.println(mechanics);
+        System.out.println(mechanic);
 
     }
 

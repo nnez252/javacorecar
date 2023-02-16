@@ -152,7 +152,7 @@ public class Passenger<B extends DriverB> extends  Transport implements Competin
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Passenger<?> passenger = (Passenger<?>) o;
-        return turbine == passenger.turbine && wghite == passenger.wghite && numberOfGear == passenger.numberOfGear && Objects.equals(gear, passenger.gear) && type == passenger.type && Objects.equals(mechanic, passenger.mechanic);
+        return turbine == passenger.turbine && wghite == passenger.wghite && numberOfGear == passenger.numberOfGear && Objects.equals(gear, passenger.gear) && type == passenger.type;
     }
 
     @Override

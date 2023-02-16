@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Transport {
@@ -11,6 +12,7 @@ public class Transport {
     private int speed;
     private float engineVolume;
     private String mechanic;
+    private List<Mechanic> mechanics = new ArrayList<>();
 
 
 
@@ -111,6 +113,13 @@ public class Transport {
         return null;
     }
 
+
+    public void addMechanic(Mechanic m) {
+        this.mechanics.add(m);
+    }
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
 
     @Override
     public String toString() {

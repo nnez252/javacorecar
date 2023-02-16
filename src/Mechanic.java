@@ -42,5 +42,12 @@ public class Mechanic {
         System.out.println("Чиню машину");
     }
 
-
+    @Override
+    public String toString() {
+        return "Mechanic{" +
+                "name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                ", car=" + car +
+                '}';
+    }
 }
